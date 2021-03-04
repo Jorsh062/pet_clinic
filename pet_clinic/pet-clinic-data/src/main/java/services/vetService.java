@@ -4,8 +4,6 @@ import model.Vet;
 
 import java.util.Set;
 
-public interface vetService {
-    Vet findById(Long Id);
-    Vet save(Vet vet);
-    Set<Vet> findAll();
+public interface vetService extends CrudeService<Vet,Long> {
+
 }
