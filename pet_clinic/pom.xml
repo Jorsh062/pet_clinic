@@ -44,12 +44,11 @@
 					<version>2.22.0</version>
 					<configuration>
 						<goals>install</goals>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
 					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
-	<scm>
-		<developerConnection></developerConnection>
-	</scm>
+
 </project>
