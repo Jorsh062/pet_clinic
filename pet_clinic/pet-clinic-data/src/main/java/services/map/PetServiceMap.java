@@ -1,24 +1,26 @@
 package services.map;
 
 import com.sun.xml.bind.v2.model.core.ID;
+import model.Owner;
 import model.Pet;
 import services.CrudeService;
+import services.petService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudeService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements petService {
     @Override
-    public Set<Pet> findall() {
-        return super.findall();
+    public Set<Pet> findAll() {
+        return super.findAll();
     }
 
     @Override
-    public Pet findById(ID id) {
+    public Pet findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public void deleteById(ID id) {
+    public void deleteById(Long id) {
         super.deleteById(id);
     }
 
