@@ -4,6 +4,6 @@ import model.Pet;
 
 import java.util.Set;
 
-public interface petService extends CrudeService<Pet,Long> {
+public interface PetService extends CrudeService<Pet,Long> {
 
 }

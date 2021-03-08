@@ -1,16 +1,13 @@
 package services.map;
 
-import com.sun.xml.bind.v2.model.core.ID;
-import model.Owner;
 import model.Pet;
 import org.springframework.stereotype.Service;
-import services.CrudeService;
-import services.petService;
+import services.PetService;
 
 import java.util.Set;
 
 @Service
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements petService {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
