@@ -2,11 +2,14 @@ package services.map;
 
 import com.sun.xml.bind.v2.model.core.ID;
 import model.Owner;
+import org.springframework.stereotype.Service;
 import services.CrudeService;
 import services.OwnerService;
 
+import java.util.List;
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
@@ -27,11 +30,14 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 
     @Override
     public Owner findByLastName(String lastName) {
         return null;
     }
+
+
+
 }

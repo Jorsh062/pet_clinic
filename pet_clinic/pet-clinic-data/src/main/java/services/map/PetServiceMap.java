@@ -3,11 +3,13 @@ package services.map;
 import com.sun.xml.bind.v2.model.core.ID;
 import model.Owner;
 import model.Pet;
+import org.springframework.stereotype.Service;
 import services.CrudeService;
 import services.petService;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements petService {
     @Override
     public Set<Pet> findAll() {
@@ -31,6 +33,6 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements petS
 
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 }
