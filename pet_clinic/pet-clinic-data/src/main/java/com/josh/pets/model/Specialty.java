@@ -1,19 +1,24 @@
 package com.josh.pets.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.transform.sax.SAXResult;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "specialties")
 public class Specialty extends BaseEntity{
-    private Set<Specialty> specialties = new HashSet<>();
 
-    public Set<Specialty> getSpecialties() {
-        return specialties;
+    @Column(name = "description")
+    private String description;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setSpecialties(Set<Specialty> specialties) {
-        this.specialties = specialties;
-    }
-
-    public void setDescription(String object) {
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
