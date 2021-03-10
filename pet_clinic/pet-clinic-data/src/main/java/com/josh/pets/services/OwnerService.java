@@ -4,7 +4,7 @@ import com.josh.pets.model.Owner;
 
 
 public interface OwnerService extends CrudeService<Owner,Long> {
-    Owner findByLastName(String lastName);
+    Owner findByLastName(String lastname);
 
 
 
