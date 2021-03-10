@@ -1,11 +1,8 @@
-package services.map;
+package com.josh.pets.services.map;
 
-import com.sun.xml.bind.v2.model.core.ID;
-import model.BaseEntity;
-import model.Owner;
-import org.springframework.stereotype.Service;
+import com.josh.pets.model.BaseEntity;
+import com.josh.pets.model.Owner;
 
-import javax.naming.NamingEnumeration;
 import java.util.*;
 
 

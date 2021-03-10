@@ -1,6 +1,5 @@
-package model;
+package com.josh.pets.model;
 
-import javax.persistence.SecondaryTable;
 import java.util.HashSet;
 import java.util.Set;
 

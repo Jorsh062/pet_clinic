@@ -1,4 +1,4 @@
-package model;
+package com.josh.pets.model;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,5 +12,8 @@ public class Specialty extends BaseEntity{
 
     public void setSpecialties(Set<Specialty> specialties) {
         this.specialties = specialties;
+    }
+
+    public void setDescription(String object) {
     }
 }

@@ -1,11 +1,11 @@
-package services.map;
+package com.josh.pets.services.map;
 
-import model.Owner;
-import model.Pet;
+import com.josh.pets.model.Owner;
+import com.josh.pets.model.Pet;
+import com.josh.pets.services.OwnerService;
+import com.josh.pets.services.PetService;
 import org.springframework.stereotype.Service;
-import services.OwnerService;
-import services.PetService;
-import services.PetTypeService;
+import com.josh.pets.services.PetTypeService;
 
 import java.util.Set;
 

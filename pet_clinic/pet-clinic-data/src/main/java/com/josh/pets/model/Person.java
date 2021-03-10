@@ -1,4 +1,4 @@
-package model;
+package com.josh.pets.model;
 
 public class Person extends BaseEntity {
     private String firstname;

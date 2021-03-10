@@ -1,8 +1,8 @@
-package services.map;
+package com.josh.pets.services.map;
 
-import model.PetType;
+import com.josh.pets.model.PetType;
+import com.josh.pets.services.PetTypeService;
 import org.springframework.stereotype.Service;
-import services.PetTypeService;
 
 import java.util.Set;
 

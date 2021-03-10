@@ -1,9 +1,6 @@
-package services;
+package com.josh.pets.services;
 
-import model.Owner;
-
-import java.util.List;
-import java.util.Set;
+import com.josh.pets.model.Owner;
 
 
 public interface OwnerService extends CrudeService<Owner,Long> {
