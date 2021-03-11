@@ -1,14 +1,9 @@
-package PetClinic.bootstrap;
+package com.josh.pets.bootstrap;
 
-import model.Owner;
-import model.Pet;
-import model.PetType;
-import model.Vet;
+import com.josh.pets.model.*;
+import com.josh.pets.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import services.OwnerService;
-import services.PetTypeService;
-import services.VetService;
 
 import java.time.LocalDate;
 
@@ -17,17 +12,29 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
-    private final  PetTypeService petTypeService;
+    private final PetTypeService petTypeService;
+    private final SpecialtyService specialtiesService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtiesService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialtiesService = specialtiesService;
+        this.visitService = visitService;
     }
+
 
     @Override
     public void run(String... args) throws Exception {
+        int count = petTypeService.findAll().size();
 
+        if (count == 0) {
+        loadData();
+        }
+    }
+
+    private void loadData() {
         PetType dog = new PetType();
         dog.setName("Dog");
         PetType savedDogPetType = petTypeService.save(dog);
@@ -36,13 +43,27 @@ public class DataLoader implements CommandLineRunner {
         dog.setName("Cat");
         PetType savedCatPetType = petTypeService.save(cat);
 
+        Specialty radiology = new Specialty();
+        radiology.setDescription("Radiology");
+        Specialty savedRadiology = specialtiesService.save(radiology);
+
+        Specialty surgery = new Specialty();
+        surgery.setDescription("Surgery");
+        Specialty savedSurgery = specialtiesService.save(surgery);
+
+        Specialty dentistry = new Specialty();
+        dentistry.setDescription("dentistry");
+        Specialty savedDentistry = specialtiesService.save(dentistry);
+
+
         Owner owner1 = new Owner();
 
-        owner1.setFirstname("Michael");
-        owner1.setLastname("Weston");
+        owner1.setFirstName("Michael");
+        owner1.setLastName("Weston");
         owner1.setAddress("12 Odeku");
         owner1.setCity("Lagos");
         owner1.setTelephone("73249828");
+
 
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedDogPetType);
@@ -54,8 +75,8 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner2.setFirstname("Fiona");
-        owner2.setLastname("Glenanne");
+        owner2.setFirstName("Fiona");
+        owner2.setLastName("Glenanne");
         owner2.setAddress("14 Idejo");
         owner2.setCity("Ogun");
         owner2.setTelephone("2334534");
@@ -69,19 +90,28 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
+
 
         System.out.println("Loaded Owners....");
 
         Vet vet1 = new Vet();
-        vet1.setFirstname("Sam");
-        vet1.setLastname("Axe");
-
+        vet1.setFirstName("Sam");
+        vet1.setLastName("Axe");
+        vet1.getSpecialties().add(savedRadiology);
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
-        vet2.setFirstname("Jessie");
-        vet2.setLastname("Porter");
+        vet2.setFirstName("Jessie");
+        vet2.setLastName("Porter");
+        vet1.getSpecialties().add(savedDentistry);
+
 
         vetService.save(vet2);
 
