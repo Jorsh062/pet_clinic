@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/pet_clinic/pet-clinic-data/pet-clinic-data.iml" filepath="$PROJECT_DIR$/pet_clinic/pet-clinic-data/pet-clinic-data.iml" />
       <module fileurl="file://$PROJECT_DIR$/pet_clinic/pet-clinic-web/pet-clinic-web.iml" filepath="$PROJECT_DIR$/pet_clinic/pet-clinic-web/pet-clinic-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pet_clinic/pet_clinic.iml" filepath="$PROJECT_DIR$/pet_clinic/pet_clinic.iml" />
     </modules>
   </component>
 </project>

@@ -4,12 +4,14 @@ import com.josh.pets.model.Owner;
 import com.josh.pets.model.Pet;
 import com.josh.pets.services.OwnerService;
 import com.josh.pets.services.PetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import com.josh.pets.services.PetTypeService;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
@@ -19,9 +21,6 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
         this.petTypeService = petTypeService;
         this.petService = petService;
     }
-
-
-
 
     @Override
     public Set<Owner> findAll() {
